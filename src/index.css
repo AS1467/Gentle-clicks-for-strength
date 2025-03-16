@@ -100,38 +100,6 @@
     
     --border: 214.3 31.8% 91.4%;
   }
-
-  .focused {
-    --background: 0 0% 98%;
-    --foreground: 0 0% 12%;
-    
-    --primary: 0 0% 30%;
-    --primary-foreground: 0 0% 98%;
-    
-    --secondary: 0 0% 90%;
-    --secondary-foreground: 0 0% 12%;
-    
-    --muted: 0 0% 90%;
-    --muted-foreground: 0 0% 45%;
-    
-    --border: 0 0% 85%;
-  }
-
-  .warm {
-    --background: 40 70% 97%;
-    --foreground: 30 10% 15%;
-    
-    --primary: 35 80% 60%;
-    --primary-foreground: 0 0% 100%;
-    
-    --secondary: 40 80% 85%;
-    --secondary-foreground: 30 10% 15%;
-    
-    --muted: 40 50% 90%;
-    --muted-foreground: 30 10% 40%;
-    
-    --border: 35 30% 85%;
-  }
 }
 
 @layer base {
@@ -162,14 +130,6 @@
     background: linear-gradient(135deg, hsl(210, 50%, 97%), hsl(200, 70%, 93%));
   }
   
-  .gradient-focused {
-    background: linear-gradient(135deg, hsl(0, 0%, 98%), hsl(0, 0%, 93%));
-  }
-  
-  .gradient-warm {
-    background: linear-gradient(135deg, hsl(40, 70%, 97%), hsl(35, 80%, 92%));
-  }
-  
   .btn-gentle {
     @apply px-5 py-3 rounded-full font-medium transition-all 
            backdrop-blur-sm shadow-lg hover:shadow-xl active:shadow-md
@@ -195,15 +155,6 @@
   .btn-calm {
     background: linear-gradient(135deg, rgba(173, 216, 230, 0.8), rgba(135, 206, 235, 0.8));
     @apply text-gray-800 border border-blue-200/50;
-  }
-  
-  .btn-focused {
-    @apply bg-gray-900/80 text-white border border-gray-800/50;
-  }
-  
-  .btn-warm {
-    background: linear-gradient(135deg, rgba(255, 196, 87, 0.8), rgba(249, 166, 80, 0.8));
-    @apply text-gray-900 border border-yellow-200/50;
   }
   
   .message-container {

@@ -1,7 +1,7 @@
 
 import React, { createContext, useContext, useState, useEffect } from 'react';
 
-type Theme = 'light' | 'dark' | 'calm' | 'focused' | 'warm';
+type Theme = 'light' | 'dark' | 'calm';
 
 interface ThemeContextType {
   theme: Theme;
@@ -16,7 +16,7 @@ export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
   // Apply theme class to document body when theme changes
   useEffect(() => {
     // Remove all theme classes
-    document.body.classList.remove('light', 'dark', 'calm', 'focused', 'warm');
+    document.body.classList.remove('light', 'dark', 'calm');
     // Add current theme class
     document.body.classList.add(theme);
     
@@ -27,7 +27,7 @@ export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
   // Load saved theme on initial render
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme') as Theme;
-    if (savedTheme) {
+    if (savedTheme && ['light', 'dark', 'calm'].includes(savedTheme)) {
       setTheme(savedTheme);
     } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
       // If no saved theme but user prefers dark mode

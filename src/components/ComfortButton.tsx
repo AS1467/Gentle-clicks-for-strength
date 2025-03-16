@@ -36,9 +36,7 @@ const ComfortButton = ({ onClick, count, className }: ComfortButtonProps) => {
           "absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300",
           theme === 'light' ? "bg-white/20" : 
           theme === 'dark' ? "bg-white/10" :
-          theme === 'calm' ? "bg-blue-100/30" :
-          theme === 'focused' ? "bg-white/10" :
-          "bg-yellow-100/30"
+          "bg-blue-100/30"
         )}
       />
       

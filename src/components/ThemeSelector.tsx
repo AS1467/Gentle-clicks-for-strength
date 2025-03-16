@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { useTheme } from '@/context/ThemeContext';
-import { Sun, Moon, Cloud, Focus, Flame } from 'lucide-react';
+import { Sun, Moon, Cloud } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 interface ThemeSelectorProps {
@@ -15,8 +15,6 @@ const ThemeSelector = ({ className }: ThemeSelectorProps) => {
     { value: 'light', icon: Sun, label: 'Light' },
     { value: 'dark', icon: Moon, label: 'Dark' },
     { value: 'calm', icon: Cloud, label: 'Calm' },
-    { value: 'focused', icon: Focus, label: 'Focused' },
-    { value: 'warm', icon: Flame, label: 'Warm' },
   ];
   
   return (

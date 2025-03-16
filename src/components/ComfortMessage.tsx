@@ -19,9 +19,7 @@ const ComfortMessage = ({ message, visible, className }: ComfortMessageProps) =>
         visible ? "animate-fade-in opacity-100" : "opacity-0",
         theme === 'light' ? "bg-white/50 border border-gray-100/80 text-gray-800" : 
         theme === 'dark' ? "bg-gray-800/40 border border-gray-700/50 text-gray-100" :
-        theme === 'calm' ? "bg-blue-50/50 border border-blue-100/50 text-gray-700" :
-        theme === 'focused' ? "bg-gray-100/50 border border-gray-200/50 text-gray-800" :
-        "bg-amber-50/50 border border-amber-100/50 text-gray-800",
+        "bg-blue-50/50 border border-blue-100/50 text-gray-700",
         className
       )}
     >
