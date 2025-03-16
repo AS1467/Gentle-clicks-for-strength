@@ -19,6 +19,9 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				sans: ["Inter", "SF Pro", "SF Pro Text", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Helvetica Neue", "Arial", "sans-serif"],
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -123,6 +126,11 @@ export default {
 					'50%': { 
 						boxShadow: '0 0 20px 5px rgba(255, 255, 255, 0.5)' 
 					}
+				},
+				'scale': {
+					'0%': { transform: 'scale(0.95)' },
+					'50%': { transform: 'scale(1.02)' },
+					'100%': { transform: 'scale(1)' }
 				}
 			},
 			animation: {
@@ -131,7 +139,8 @@ export default {
 				'pulse-gentle': 'pulse-gentle 3s ease-in-out infinite',
 				'fade-in': 'fade-in 0.5s ease-out',
 				'fade-out': 'fade-out 0.5s ease-out',
-				'glow': 'glow 3s ease-in-out infinite'
+				'glow': 'glow 3s ease-in-out infinite',
+				'scale': 'scale 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)'
 			}
 		}
 	},

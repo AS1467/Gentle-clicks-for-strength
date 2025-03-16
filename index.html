@@ -8,6 +8,26 @@
     <meta name="description" content="A safe space to find encouragement and strength when temptation strikes" />
     <meta name="author" content="Lovable" />
     <meta property="og:image" content="/og-image.png" />
+    <!-- Import Inter font (Apple SF Pro alternative) -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
+    <style>
+      * {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      
+      @keyframes ripple {
+        to {
+          transform: scale(4);
+          opacity: 0;
+        }
+      }
+      
+      .ripple {
+        animation: ripple 0.6s linear;
+      }
+    </style>
   </head>
 
   <body>
@@ -15,5 +35,32 @@
     <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
     <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
     <script type="module" src="/src/main.tsx"></script>
+    <!-- Add ripple effect script -->
+    <script>
+      document.addEventListener('click', function(e) {
+        if (!e.target.closest('.btn-gentle')) return;
+        
+        const button = e.target.closest('.btn-gentle');
+        const ripple = button.querySelector('.ripple');
+        
+        if (ripple) {
+          ripple.remove();
+        }
+        
+        const circle = document.createElement('span');
+        circle.classList.add('ripple');
+        
+        const diameter = Math.max(button.clientWidth, button.clientHeight);
+        const radius = diameter / 2;
+        
+        const rect = button.getBoundingClientRect();
+        
+        circle.style.width = circle.style.height = `${diameter}px`;
+        circle.style.left = `${e.clientX - rect.left - radius}px`;
+        circle.style.top = `${e.clientY - rect.top - radius}px`;
+        
+        button.querySelector('.pointer-events-none').appendChild(circle);
+      });
+    </script>
   </body>
 </html>
